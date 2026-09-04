@@ -1,7 +1,7 @@
 // Generated from tokens/tokens.json. Do not edit directly.
 export const designTokens = {
   "mode1": {
-    "colorBackground": "#FF0000",
+    "colorBackground": "#FFFFFF",
     "colorSurface": "#FFFFFF",
     "colorAction": "#4F46E5",
     "colorText": "#0F172A",
