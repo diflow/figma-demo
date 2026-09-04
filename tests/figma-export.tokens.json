@@ -1,0 +1,22 @@
+{
+  "color": {
+    "action": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [0.3098039, 0.2745098, 0.8980392],
+        "alpha": 1,
+        "hex": "#4F46E5"
+      }
+    }
+  },
+  "spacing": {
+    "card": {
+      "$type": "number",
+      "$value": 24
+    }
+  },
+  "$extensions": {
+    "com.figma.modeName": "Mode 1"
+  }
+}

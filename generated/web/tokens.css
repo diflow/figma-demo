@@ -1,0 +1,9 @@
+/* Generated from tokens/tokens.json. Do not edit directly. */
+:root {
+  --color-background: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-action: #4F46E5;
+  --color-text: #0F172A;
+  --spacing-card: 24px;
+  --radius-card: 16px;
+}

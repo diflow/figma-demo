@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 16px; font: 12px/1.4 Inter, sans-serif; color: #172033; }
+    h2 { margin: 0 0 6px; font-size: 16px; }
+    p { margin: 0 0 12px; color: #5b6475; }
+    textarea { width: 100%; height: 360px; resize: vertical; border: 1px solid #d8dce5; border-radius: 8px; padding: 10px; font: 11px/1.45 ui-monospace, monospace; }
+    .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+    button { border: 0; border-radius: 8px; padding: 10px; background: #edf0f6; cursor: pointer; }
+    button.primary { color: white; background: #4f46e5; }
+    #status { min-height: 18px; margin-top: 10px; color: #166534; }
+  </style>
+</head>
+<body>
+  <h2>Free Token Sync Demo</h2>
+  <p>Создайте пример или перенесите локальные Variables через JSON.</p>
+  <textarea id="json" spellcheck="false" placeholder="Здесь появится JSON…"></textarea>
+  <div class="actions">
+    <button class="primary" id="create">Создать демо в Figma</button>
+    <button id="export">Экспортировать JSON</button>
+    <button id="copy">Копировать</button>
+    <button id="import">Импортировать JSON</button>
+  </div>
+  <div id="status"></div>
+  <script>
+    const area = document.getElementById("json");
+    const status = document.getElementById("status");
+    document.getElementById("create").onclick = () => parent.postMessage({ pluginMessage: { type: "create-demo" } }, "*");
+    document.getElementById("export").onclick = () => parent.postMessage({ pluginMessage: { type: "export" } }, "*");
+    document.getElementById("import").onclick = () => parent.postMessage({ pluginMessage: { type: "import", json: area.value } }, "*");
+    document.getElementById("copy").onclick = () => {
+      area.select();
+      document.execCommand("copy");
+      status.textContent = "JSON скопирован";
+    };
+    onmessage = (event) => {
+      const message = event.data.pluginMessage;
+      if (message.type === "json") area.value = JSON.stringify(message.data, null, 2);
+      status.textContent = message.message || "";
+      if (message.error) status.style.color = "#b91c1c";
+      else status.style.color = "#166534";
+    };
+  </script>
+</body>
+</html>
+

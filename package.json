@@ -1,0 +1,11 @@
+{
+  "name": "figma-free-sync-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "check": "node scripts/generate.mjs --check",
+    "test": "node scripts/test.mjs"
+  }
+}
