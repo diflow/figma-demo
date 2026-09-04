@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generated from tokens/tokens.json. Do not edit directly. -->
 <resources>
-    <color name="color_background">#FF0000</color>
+    <color name="color_background">#FFFFFF</color>
     <color name="color_surface">#FFFFFF</color>
     <color name="color_action">#4F46E5</color>
     <color name="color_text">#0F172A</color>
